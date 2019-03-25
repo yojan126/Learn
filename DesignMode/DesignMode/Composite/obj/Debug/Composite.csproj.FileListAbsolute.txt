@@ -1,0 +1,7 @@
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Composite\obj\Debug\Composite.csprojAssemblyReference.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Composite\obj\Debug\Composite.csproj.CoreCompileInputs.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Composite\bin\Debug\Composite.exe.config
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Composite\bin\Debug\Composite.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Composite\bin\Debug\Composite.pdb
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Composite\obj\Debug\Composite.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Composite\obj\Debug\Composite.pdb

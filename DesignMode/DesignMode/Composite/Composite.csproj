@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A644BDF1-0ED1-4010-9E2C-165D88D13A8C}</ProjectGuid>
+    <ProjectGuid>{8C768996-2534-4913-91D4-8D68410D5CD0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Decorater</RootNamespace>
-    <AssemblyName>Decorater</AssemblyName>
+    <RootNamespace>Composite</RootNamespace>
+    <AssemblyName>Composite</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -47,9 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
