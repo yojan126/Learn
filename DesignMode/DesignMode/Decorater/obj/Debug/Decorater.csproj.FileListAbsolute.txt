@@ -1,0 +1,7 @@
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Decorater\bin\Debug\Decorater.exe.config
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Decorater\bin\Debug\Decorater.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Decorater\bin\Debug\Decorater.pdb
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Decorater\obj\Debug\Decorater.csprojAssemblyReference.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Decorater\obj\Debug\Decorater.csproj.CoreCompileInputs.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Decorater\obj\Debug\Decorater.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Decorater\obj\Debug\Decorater.pdb
