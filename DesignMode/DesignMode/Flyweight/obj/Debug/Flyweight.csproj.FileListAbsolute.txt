@@ -1,0 +1,6 @@
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Flyweight\bin\Debug\Flyweight.exe.config
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Flyweight\bin\Debug\Flyweight.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Flyweight\bin\Debug\Flyweight.pdb
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Flyweight\obj\Debug\Flyweight.csproj.CoreCompileInputs.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Flyweight\obj\Debug\Flyweight.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Flyweight\obj\Debug\Flyweight.pdb
