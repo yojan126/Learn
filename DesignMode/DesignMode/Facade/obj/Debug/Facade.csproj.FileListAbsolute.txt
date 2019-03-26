@@ -1,0 +1,7 @@
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Facade\bin\Debug\Facade.exe.config
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Facade\bin\Debug\Facade.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Facade\bin\Debug\Facade.pdb
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Facade\obj\Debug\Facade.csprojAssemblyReference.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Facade\obj\Debug\Facade.csproj.CoreCompileInputs.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Facade\obj\Debug\Facade.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Facade\obj\Debug\Facade.pdb
