@@ -1,0 +1,7 @@
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Template\bin\Debug\Template.exe.config
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Template\bin\Debug\Template.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Template\bin\Debug\Template.pdb
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Template\obj\Debug\Template.csprojAssemblyReference.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Template\obj\Debug\Template.csproj.CoreCompileInputs.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Template\obj\Debug\Template.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Template\obj\Debug\Template.pdb
