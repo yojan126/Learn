@@ -1,0 +1,7 @@
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Proxy\bin\Debug\Proxy.exe.config
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Proxy\bin\Debug\Proxy.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Proxy\bin\Debug\Proxy.pdb
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Proxy\obj\Debug\Proxy.csprojAssemblyReference.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Proxy\obj\Debug\Proxy.csproj.CoreCompileInputs.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Proxy\obj\Debug\Proxy.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Proxy\obj\Debug\Proxy.pdb

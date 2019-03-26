@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/********************************享元模式***************************************/
 namespace Flyweight
 {
     /// <summary>
