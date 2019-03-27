@@ -14,7 +14,10 @@ namespace BasicSample
             // DelegateSample.Do();
 
             // 检测奇偶
-            CheckOddSample.CheckOdd();
+            // CheckOddSample.CheckOdd();
+
+            // 通过线程延时排序
+            ThreadSort.ThreadSortMethod();
         }
     }
 }
