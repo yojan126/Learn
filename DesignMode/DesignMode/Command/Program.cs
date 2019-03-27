@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/**************************命令模式************************************/
 namespace Command
 {
     class Program

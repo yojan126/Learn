@@ -1,0 +1,7 @@
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Iterator\bin\Debug\Iterator.exe.config
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Iterator\bin\Debug\Iterator.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Iterator\bin\Debug\Iterator.pdb
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Iterator\obj\Debug\Iterator.csprojAssemblyReference.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Iterator\obj\Debug\Iterator.csproj.CoreCompileInputs.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Iterator\obj\Debug\Iterator.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Iterator\obj\Debug\Iterator.pdb
