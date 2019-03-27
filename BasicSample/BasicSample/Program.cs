@@ -10,7 +10,11 @@ namespace BasicSample
     {
         static void Main(string[] args)
         {
-            DelegateSample.Do();
+            // 委托例子
+            // DelegateSample.Do();
+
+            // 检测奇偶
+            CheckOddSample.CheckOdd();
         }
     }
 }
