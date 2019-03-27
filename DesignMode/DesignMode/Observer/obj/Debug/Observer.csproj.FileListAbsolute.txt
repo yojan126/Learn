@@ -1,0 +1,7 @@
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Observer\bin\Debug\Observer.exe.config
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Observer\bin\Debug\Observer.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Observer\bin\Debug\Observer.pdb
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Observer\obj\Debug\Observer.csprojAssemblyReference.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Observer\obj\Debug\Observer.csproj.CoreCompileInputs.cache
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Observer\obj\Debug\Observer.exe
+E:\fengzh\own\GitHub\MySolution\DesignMode\DesignMode\Observer\obj\Debug\Observer.pdb
