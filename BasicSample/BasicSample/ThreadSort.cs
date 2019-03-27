@@ -12,8 +12,13 @@ namespace BasicSample
         public static void ThreadSortMethod()
         {
             int[] intArray = new int[] { 3, 1, 5, 7, 2, 9, 6, 8, 4 };
-
-            foreach (int i in intArray)
+            List<int> lst = new List<int>();
+            Random random = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                lst.Add(random.Next(1, 99));
+            }
+            foreach (int i in lst)
             {
                 new Thread(x =>
                 {
