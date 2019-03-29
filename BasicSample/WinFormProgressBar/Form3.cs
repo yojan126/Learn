@@ -22,7 +22,7 @@ namespace WinFormProgressBar
         {
             if (iValue > 0)
             {
-                if (progressBar1.Value + iValue < progressBar1.Maximum)
+                if (progressBar1.Value < progressBar1.Maximum)
                 {
                     progressBar1.Value += iValue;
                     this.textBox1.AppendText(strInfo);

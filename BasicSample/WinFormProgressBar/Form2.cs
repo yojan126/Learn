@@ -28,7 +28,7 @@ namespace WinFormProgressBar
             this.BeginInvoke(mi);
             Thread.Sleep(100);
             object objReturn = null;
-            for (int i = 0; i <= 100; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 objReturn = this.Invoke(this.myincrease, new object[] { 1, i.ToString() + "\r\n" });
                 Thread.Sleep(50);

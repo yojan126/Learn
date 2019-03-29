@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BDCAAC27-27C4-4F73-B0A2-EBE0C0AFB25B}</ProjectGuid>
+    <ProjectGuid>{1030801F-639A-4EEB-8083-0E76E08E6324}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BasicSample</RootNamespace>
-    <AssemblyName>BasicSample</AssemblyName>
+    <RootNamespace>ObserverAndDelegateAndEvent</RootNamespace>
+    <AssemblyName>ObserverAndDelegateAndEvent</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,12 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ASCConvert.cs" />
-    <Compile Include="CheckOddSample.cs" />
-    <Compile Include="DelegateSample.cs" />
+    <Compile Include="Fifth.cs" />
+    <Compile Include="First.cs" />
+    <Compile Include="Forth.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThreadSort.cs" />
+    <Compile Include="Second.cs" />
+    <Compile Include="Third.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

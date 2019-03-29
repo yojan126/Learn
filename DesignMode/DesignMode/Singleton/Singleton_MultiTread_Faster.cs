@@ -48,4 +48,11 @@ namespace Singleton
             return uniqueInstance;
         }
     }
+    public class a
+    {
+        public void ac()
+        {
+            Singleton_MultiTread_Faster singleton = Singleton_MultiTread_Faster.GetInstance();
+        }
+    }
 }

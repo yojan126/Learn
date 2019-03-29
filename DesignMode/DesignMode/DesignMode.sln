@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15.Command", "Command\15.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16.Iterator", "Iterator\16.Iterator.csproj", "{33FBF641-83B1-469F-9324-2E34F66D7841}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "Observer\Observer.csproj", "{71817E0C-BE32-476C-8CCF-5DF66C505C07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17.Observer", "Observer\17.Observer.csproj", "{71817E0C-BE32-476C-8CCF-5DF66C505C07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

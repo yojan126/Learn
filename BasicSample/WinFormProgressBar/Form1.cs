@@ -19,7 +19,6 @@ namespace WinFormProgressBar
         {
             InitializeComponent();
         }
-
         private void SetTextMessage(int iPos, string strInfo)
         {
             if (this.InvokeRequired)
@@ -41,7 +40,7 @@ namespace WinFormProgressBar
 
         private void SleepT()
         {
-            for (int i = 0; i <= 100; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 Thread.Sleep(50);
                 SetTextMessage(i, i.ToString() + "\r\n");

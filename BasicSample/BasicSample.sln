@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicSample", "BasicSample\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormProgressBar", "WinFormProgressBar\WinFormProgressBar.csproj", "{D53123A5-1371-46FC-80A0-F214E5EF906B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverAndDelegateAndEvent", "ObserverAndDelegateAndEvent\ObserverAndDelegateAndEvent.csproj", "{1030801F-639A-4EEB-8083-0E76E08E6324}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D53123A5-1371-46FC-80A0-F214E5EF906B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D53123A5-1371-46FC-80A0-F214E5EF906B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D53123A5-1371-46FC-80A0-F214E5EF906B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1030801F-639A-4EEB-8083-0E76E08E6324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1030801F-639A-4EEB-8083-0E76E08E6324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1030801F-639A-4EEB-8083-0E76E08E6324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1030801F-639A-4EEB-8083-0E76E08E6324}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
