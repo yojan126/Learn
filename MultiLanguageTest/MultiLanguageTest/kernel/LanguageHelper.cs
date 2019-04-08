@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Json;
 
 namespace MultiLanguageTest.kernel
 {
     public class LanguageHelper
     {
-        #region 简繁体转换
+        #region 多语言转换
         /// <summary>
         /// 内容的语言转化
         /// </summary>
@@ -30,7 +33,7 @@ namespace MultiLanguageTest.kernel
             }
         }
         #endregion
-        #region 控件简繁体语言转换
+        #region 控件多语言转换
 
         /// <summary>
         /// 设置容器类控件的语言
@@ -178,8 +181,8 @@ namespace MultiLanguageTest.kernel
             {
                 SetLanguage(ctrl);
             }
-
         }
+
         /// <summary>
         /// 设置普通控件的语言
         /// </summary>
@@ -246,8 +249,8 @@ namespace MultiLanguageTest.kernel
                     }
                 }
             }
-
         }
+
         /// <summary>
         /// 递归转化菜单
         /// </summary>
@@ -277,6 +280,7 @@ namespace MultiLanguageTest.kernel
 
             }
         }
+
         /// <summary>
         /// 递归转化树
         /// </summary>
@@ -303,7 +307,6 @@ namespace MultiLanguageTest.kernel
             }
         }
 
-
         /// <summary>
         /// 根据语言标识符得到转换后的值
         /// </summary>
@@ -312,49 +315,67 @@ namespace MultiLanguageTest.kernel
         /// <returns></returns>
         public static string GetLanguageText(string value)
         {
-            string languageFlag = Thread.CurrentThread.CurrentUICulture.Name;
-            if (string.IsNullOrWhiteSpace(value))
+            if (string.IsNullOrWhiteSpace(value) || ConfigurationManager.AppSettings["Language"].ToUpper() == "ZH-CN")
             {
                 return value;
             }
 
-            switch (languageFlag.ToUpper())
+            return zhCNToOthers(value);
+
+        }
+
+        /// <summary>
+        /// 中文转为其它语言
+        /// </summary>
+        /// <param name="str">中文</param>
+        /// <returns>其它语言</returns>
+        private static string zhCNToOthers(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return str;
+            if (LanguageData != null && LanguageData.ContainsKey(str))
             {
-                case "ZH-CHT":
+                return LanguageData[str];
+            }
+            return str;
+
+        }
+
+        #endregion
+        #region 加载语言库
+        private static Dictionary<string, string> LanguageData;
+
+        public static void LoadLanguageFile()
+        {
+            string langPath = AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["LanguagePath"]
+                + ConfigurationManager.AppSettings["Language"].ToUpper() + "\\" + "Basic.json";
+            if (File.Exists(langPath))
+            {
+                using (FileStream fileStream = new FileStream(langPath, FileMode.Open))
+                {
+                    try
                     {
-                        return ToTraditional(value);
+                        int fsLen = (int)fileStream.Length;
+                        byte[] heByte = new byte[fsLen];
+                        int r = fileStream.Read(heByte, 0, heByte.Length);
+                        string myStr = Encoding.Default.GetString(heByte).Replace("\r\n", "");
+                        JsonMe json = new JsonMe();
+
+                        LanguageData = json.JsonToDictionary(myStr);
+
                     }
-                default:
+                    catch (Exception)
                     {
-                        return ToSimplified(value);
+
+                        throw;
                     }
+                    finally
+                    {
+                        fileStream.Close();
+                    }
+                }
             }
         }
-
-        /// <summary>
-        /// 简体转换为繁体
-        /// </summary>
-        /// <param name="str">简体字</param>
-        /// <returns>繁体字</returns>
-        private static string ToTraditional(string str)
-        {
-            if (string.IsNullOrEmpty(str))
-                return str;
-            return "界面";
-
-        }
-        /// <summary>
-        /// 繁体转换为简体
-        /// </summary>
-        /// <param name="str">繁体字</param>
-        /// <returns>简体字</returns>
-        private static string ToSimplified(string str)
-        {
-            if (string.IsNullOrEmpty(str))
-                return str;
-            return "BB";
-        }
         #endregion
-
     }
 }

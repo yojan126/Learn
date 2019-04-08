@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace MultiLanguageTest.kernel
 {
@@ -12,11 +13,8 @@ namespace MultiLanguageTest.kernel
     {
         public MyStyleFormBase()
         {
-            if (!Thread.CurrentThread.CurrentUICulture.Name.Equals("zh-CN", StringComparison.OrdinalIgnoreCase)) //如果是简体，则无需转换
-            {
-                base.TextChanged += MyStyleFormBase_TextChanged;
-                base.Shown += MyStyleFormBase_Shown;
-            }
+            base.TextChanged += MyStyleFormBase_TextChanged;
+            base.Shown += MyStyleFormBase_Shown;
         }
 
         private void MyStyleFormBase_TextChanged(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace MultiLanguageTest
     {
         public Form1()
         {
+            LanguageHelper.LoadLanguageFile();
             InitializeComponent();
         }
     }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proxy
 {
+    /**************************代理模式******************************/
     class Program
     {
         static void Main(string[] args)

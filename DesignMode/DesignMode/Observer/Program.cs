@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/******************************************观察者模式*************************************************/
 namespace Observer
 {
     /// <summary>

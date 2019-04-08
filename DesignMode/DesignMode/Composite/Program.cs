@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Composite
 {
+    /*******************组合模式*************************/
     class Program
     {
         /// <summary>
