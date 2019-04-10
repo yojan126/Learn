@@ -40,7 +40,7 @@ namespace MultiLanguageTest.kernel
         /// </summary>
         /// <param name="ctrl"></param>
         /// <returns></returns>
-        private static void SetContainerLanguage(System.Windows.Forms.Control ctrl)
+        private static void SetContainerLanguage(Control ctrl)
         {
             if (ctrl is DataGridView)
             {
@@ -62,7 +62,8 @@ namespace MultiLanguageTest.kernel
                     }
                 }
                 catch (Exception)
-                { }
+                {
+                }
             }
             if (ctrl is MenuStrip)
             {
@@ -167,7 +168,8 @@ namespace MultiLanguageTest.kernel
                     }
                 }
                 catch (Exception)
-                { }
+                {
+                }
             }
 
             if (ctrl.HasChildren)
@@ -277,7 +279,6 @@ namespace MultiLanguageTest.kernel
                         }
                     }
                 }
-
             }
         }
 
@@ -319,9 +320,7 @@ namespace MultiLanguageTest.kernel
             {
                 return value;
             }
-
             return zhCNToOthers(value);
-
         }
 
         /// <summary>
@@ -338,7 +337,6 @@ namespace MultiLanguageTest.kernel
                 return LanguageData[str];
             }
             return str;
-
         }
 
         #endregion
@@ -366,7 +364,6 @@ namespace MultiLanguageTest.kernel
                     }
                     catch (Exception)
                     {
-
                         throw;
                     }
                     finally
