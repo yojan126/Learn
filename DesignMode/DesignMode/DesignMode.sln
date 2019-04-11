@@ -45,7 +45,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19.State", "State\19.State.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20.Strategy", "Strategy\20.Strategy.csproj", "{71F7E68F-921F-4938-9A05-46DD3F34A8F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duty", "Duty\Duty.csproj", "{47E57C13-F1DF-4316-B0AD-BEC710C7FE26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21.Duty", "Duty\21.Duty.csproj", "{47E57C13-F1DF-4316-B0AD-BEC710C7FE26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitor", "Visitor\Visitor.csproj", "{C1F09621-4E3E-49E4-9C0F-9F2BD597EDB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{47E57C13-F1DF-4316-B0AD-BEC710C7FE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47E57C13-F1DF-4316-B0AD-BEC710C7FE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47E57C13-F1DF-4316-B0AD-BEC710C7FE26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F09621-4E3E-49E4-9C0F-9F2BD597EDB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F09621-4E3E-49E4-9C0F-9F2BD597EDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F09621-4E3E-49E4-9C0F-9F2BD597EDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F09621-4E3E-49E4-9C0F-9F2BD597EDB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

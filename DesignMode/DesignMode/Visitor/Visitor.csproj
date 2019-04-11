@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47E57C13-F1DF-4316-B0AD-BEC710C7FE26}</ProjectGuid>
+    <ProjectGuid>{C1F09621-4E3E-49E4-9C0F-9F2BD597EDB2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Duty</RootNamespace>
-    <AssemblyName>Duty</AssemblyName>
+    <RootNamespace>Visitor</RootNamespace>
+    <AssemblyName>Visitor</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,15 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChainofResponsibility.cs" />
+    <Compile Include="NotVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VistorPattern.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
