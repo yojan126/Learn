@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*********************访问者模式**************************/
 namespace Visitor
 {
     class Program
