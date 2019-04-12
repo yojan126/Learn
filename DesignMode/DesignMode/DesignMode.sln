@@ -49,7 +49,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21.Duty", "Duty\21.Duty.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22.Visitor", "Visitor\22.Visitor.csproj", "{C1F09621-4E3E-49E4-9C0F-9F2BD597EDB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memo", "Memo\Memo.csproj", "{35449755-C7AB-4C82-8CB0-B71D1E221E1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23.Memo", "Memo\23.Memo.csproj", "{35449755-C7AB-4C82-8CB0-B71D1E221E1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,10 +13,10 @@ namespace ObserverAndDelegateAndEvent
             Cat5th cat = new Cat5th("Tom");
             Rat5th r1 = new Rat5th("A");
             Rat5th r2 = new Rat5th("B");
-
+            Rat5th r3 = new Rat5th();
             cat.catShout += r1.Run;
             cat.catShout += r2.Run;
-
+            cat.catShout += r3.Run;
             cat.Shout();
             Console.ReadLine();
         }

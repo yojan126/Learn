@@ -34,6 +34,16 @@ namespace Memo
             mobileOwner.RestoreMemo(caretaker.contactMemo);
             mobileOwner.Show();
 
+            // 再更改发起人联系列表
+            Console.WriteLine("----移除第一个联系人----");
+            mobileOwner.ContactPeople.RemoveAt(0);
+            mobileOwner.Show();
+
+            // 再恢复到初始状态
+            Console.WriteLine("----再恢复联系人列表----");
+            mobileOwner.RestoreMemo(caretaker.contactMemo);
+            mobileOwner.Show();
+
             Console.ReadLine();
         }
     }
@@ -64,7 +74,8 @@ namespace Memo
             // 这里也应该传递深拷贝，new List方式传递的是浅拷贝，
             // 因为ContactPerson类中都是string类型,所以这里new list方式对ContactPerson对象执行了深拷贝
             // 如果ContactPerson包括非string的引用类型就会有问题，所以这里也应该用序列化传递深拷贝
-            return new ContactMemo(new List<ContactPerson>(this.ContactPeople));
+            // return new ContactMemo(new List<ContactPerson>(this.ContactPeople));     浅拷贝 已修改
+            return new ContactMemo(new List<ContactPerson>(this.ContactPeople.ToArray()));      // 深拷贝
         }
 
         /// <summary>
@@ -76,7 +87,8 @@ namespace Memo
             // 下面这种方式是错误的，因为这样传递的是引用，
             // 则删除一次可以恢复，但恢复之后再删除的话就恢复不了.
             // 所以应该传递contactPersonBack的深拷贝，深拷贝可以使用序列化来完成
-            this.ContactPeople = memo.contactPeopleBack;
+            // this.ContactPeople = memo.contactPeopleBack;                                   浅拷贝  已修改
+            this.ContactPeople = new List<ContactPerson>(memo.contactPeopleBack.ToArray());     // 深拷贝
         }
 
         public void Show()
