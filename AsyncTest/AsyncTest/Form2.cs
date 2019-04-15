@@ -18,12 +18,13 @@ namespace AsyncTest
             InitializeComponent();
         }
 
-        delegate void DoEventHandler(object obj);
+        delegate void TestMethodEventHandler(object obj);
+        delegate void RefreshTBEventHandler(object obj);
 
         private void button1_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(new ParameterizedThreadStart(TestMethod));
-            thread.Start("A");
+            thread.Start(null);
             textBox2.Text = Thread.CurrentThread.ManagedThreadId.ToString();
         }
 
@@ -31,13 +32,30 @@ namespace AsyncTest
         {
             if (textBox3.InvokeRequired)
             {
-                Thread.Sleep(2000);
+                for (int i = 0; i < 10; i++)
+                {
+                    Thread.Sleep(1000);
+                    RefreshTb(i);
+                }
+
                 threadid = Thread.CurrentThread.ManagedThreadId.ToString();
-                this.textBox3.Invoke(new DoEventHandler(TestMethod), threadid);
+                this.textBox3.Invoke(new TestMethodEventHandler(TestMethod), threadid);
             }
             else
             {
                 textBox3.Text = threadid.ToString();
+            }
+        }
+
+        private void RefreshTb(object obj)
+        {
+            if (textBox1.InvokeRequired)
+            {
+                this.textBox1.Invoke(new RefreshTBEventHandler(RefreshTb), obj);
+            }
+            else
+            {
+                this.textBox1.Text += obj.ToString() + "\r\n";
             }
         }
     }
