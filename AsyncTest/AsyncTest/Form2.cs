@@ -26,6 +26,7 @@ namespace AsyncTest
             Thread thread = new Thread(new ParameterizedThreadStart(TestMethod));
             thread.Start(null);
             textBox2.Text = Thread.CurrentThread.ManagedThreadId.ToString();
+            thread.Abort();
         }
 
         private void TestMethod(object threadid)

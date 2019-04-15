@@ -24,7 +24,7 @@ namespace AsyncTest
         {
             long length = await AccessWebAsync();
 
-            // 这里可以做一些不依赖回复的操作
+            // 这里可以做一些不依赖回复的操作      此处描述错误   await之后的所有操作都需等待前一步完成后才能进行
             OtherWork();
 
             this.textBox1.Text += string.Format("\n 回复的字节长度为： {0}.\r\n", length);

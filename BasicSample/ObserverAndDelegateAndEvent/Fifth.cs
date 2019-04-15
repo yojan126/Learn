@@ -17,6 +17,7 @@ namespace ObserverAndDelegateAndEvent
             cat.catShout += r1.Run;
             cat.catShout += r2.Run;
             cat.catShout += r3.Run;
+            cat.catShout += r2.Jump;
             cat.Shout();
             Console.ReadLine();
         }
@@ -67,6 +68,11 @@ namespace ObserverAndDelegateAndEvent
         public void Run(object sender,Cat5thShoutEventArgs e)
         {
             Console.WriteLine("{0} 来了。 {1} 跑了", e.CatName, Name);
+        }
+
+        public void Jump(object sender, Cat5thShoutEventArgs e)
+        {
+            Console.WriteLine("{0} 来了。 {1} 跳了起来", e.CatName, Name);
         }
 
         public Rat5th() { }
