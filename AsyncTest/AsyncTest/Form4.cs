@@ -23,6 +23,15 @@ namespace AsyncTest
             InitializeComponent();
             dtBack.Columns.Add("ID", typeof(int));
             dtBack.Columns.Add("Value", typeof(string));
+            Random r = new Random();
+            for (int j = 0; j < 10; j++)
+            {
+                DataRow dr = dtBack.NewRow();
+                dr[0] = j;
+                dr[1] = r.Next(999).ToString();
+                dtBack.Rows.Add(dr);
+            }
+            dataGridView1.DataSource = dtBack;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,7 +47,7 @@ namespace AsyncTest
         {
             while (1 == 1)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(200);
                 ShowData();
             }
         }
@@ -55,10 +64,11 @@ namespace AsyncTest
             {
                 lock (lockobj)
                 {
-                    dtShow = dtBack.Copy();
-                    dataGridView1.DataSource = dtShow;
+                    //dtShow = dtBack.Copy();
+                    //dataGridView1.DataSource = dtShow;
+                    dataGridView1.Refresh();         // 相较于refresh方法，目前的方法datagridview不会出现闪烁现象
                 }
-                dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.Rows.Count - 1;
+                // dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.Rows.Count - 1;
             }
         }
 
@@ -67,11 +77,15 @@ namespace AsyncTest
             Random r = new Random();
             for (int i = 0; i < 100000; i++)
             {
-                Thread.Sleep(10);
-                DataRow dr = dtBack.NewRow();
-                dr[0] = i;
-                dr[1] = r.Next(999).ToString();
-                SetData(dr);
+                Thread.Sleep(200);
+                //DataRow dr = dtBack.NewRow();
+                //dr[0] = i;
+                //dr[1] = r.Next(999).ToString();
+                //SetData(dr);
+                for (int j = 0; j < 10; j++)
+                {
+                    dtBack.Rows[j][1]= r.Next(999).ToString();
+                }
             }
         }
 
