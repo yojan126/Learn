@@ -23,7 +23,7 @@ namespace AsyncTest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(new ParameterizedThreadStart(TestMethod));
+            Thread thread = new Thread(TestMethod);
             thread.Start(null);
             textBox2.Text = Thread.CurrentThread.ManagedThreadId.ToString();
             thread.Abort();

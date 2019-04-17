@@ -30,6 +30,23 @@ namespace WinFormProgressBar
         private void button1_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
+            A a = new A();
+            a.GetStr();
         }
+
+    }
+
+    public class A : IMethord
+    {
+        public string GetStr()
+        {
+            return "";
+        }
+    }
+
+
+    public interface IMethord
+    {
+        string GetStr();
     }
 }
