@@ -42,7 +42,7 @@ namespace AsyncTest
 
         private void DoSomething(Button button)
         {
-            Logging.listAdd(button.Name);
+            Logging.listAdd(button);
         }
     }
 
@@ -55,9 +55,9 @@ namespace AsyncTest
 
         }
 
-        public static void listAdd(string btnName)
+        public static void listAdd(Button button)      // 静态方法
         {
-            lstBtnName.Add(btnName);            // 不同实例化的logButton类在被单击后都会向logList中添加被点击button的name记录
+            lstBtnName.Add(button.Tag.ToString());            // 不同实例化的logButton类在被单击后都会向logList中添加被点击button的name记录
         }
     }
 }

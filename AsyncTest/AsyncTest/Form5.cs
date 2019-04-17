@@ -23,6 +23,7 @@ namespace AsyncTest
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string id = Thread.CurrentThread.ManagedThreadId.ToString();
             t1 = new Thread(T1Data);
             t2 = new Thread(T2Data);
 
@@ -44,6 +45,7 @@ namespace AsyncTest
 
         private void T1Show(int i)
         {
+            string id = Thread.CurrentThread.ManagedThreadId.ToString();
             if (textBox1.InvokeRequired)
             {
                 t1EventHandler t1EventHandler=new t1EventHandler(T2Show);

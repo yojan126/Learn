@@ -28,20 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.logButton1 = new AsyncTest.logButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.logButton2 = new AsyncTest.logButton();
+            this.logButton1 = new AsyncTest.logButton();
             this.SuspendLayout();
-            // 
-            // logButton1
-            // 
-            this.logButton1.Location = new System.Drawing.Point(12, 21);
-            this.logButton1.Name = "logButton1";
-            this.logButton1.Size = new System.Drawing.Size(75, 23);
-            this.logButton1.TabIndex = 0;
-            this.logButton1.Text = "logButton1";
-            this.logButton1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -66,8 +57,19 @@
             this.logButton2.Name = "logButton2";
             this.logButton2.Size = new System.Drawing.Size(75, 23);
             this.logButton2.TabIndex = 3;
+            this.logButton2.Tag = "BBBB";
             this.logButton2.Text = "logButton2";
             this.logButton2.UseVisualStyleBackColor = true;
+            // 
+            // logButton1
+            // 
+            this.logButton1.Location = new System.Drawing.Point(12, 21);
+            this.logButton1.Name = "logButton1";
+            this.logButton1.Size = new System.Drawing.Size(75, 23);
+            this.logButton1.TabIndex = 0;
+            this.logButton1.Tag = "AAAA";
+            this.logButton1.Text = "logButton1";
+            this.logButton1.UseVisualStyleBackColor = true;
             // 
             // Form6
             // 
