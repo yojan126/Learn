@@ -14,6 +14,9 @@ namespace DelegateTest
             Car car = new Car(15);
             new Alerter(car);
             car.Run(120);
+
+            Console.ReadLine();
+
         }
     }
 

@@ -11,10 +11,9 @@ namespace DelegateTest
         static void Main(string[] args)
         {
             // Test1.DoThis();
-            Test2.DoThis();
+            // Test2.DoThis();
 
-
-            Console.ReadLine();
+            AnonymousMethod.DoThis();
         }
     }
 }

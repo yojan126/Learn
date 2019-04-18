@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,6 @@ namespace AsyncTest
     {
         public delegate void ObserverEventHandler(Button button);       // 创建委托
         public event ObserverEventHandler ObserverEvent;                // 创建委托事件
-
         protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
@@ -48,6 +48,8 @@ namespace AsyncTest
 
     public class Logging
     {
+        private static object Locker = new object();
+
         public static List<string> lstBtnName = new List<string>();                         
 
         public Logging()
@@ -57,7 +59,10 @@ namespace AsyncTest
 
         public static void listAdd(Button button)      // 静态方法
         {
-            lstBtnName.Add(button.Tag.ToString());            // 不同实例化的logButton类在被单击后都会向logList中添加被点击button的name记录
+            lock(Locker)
+            {
+                lstBtnName.Add(button.Tag.ToString());            // 不同实例化的logButton类在被单击后都会向logList中添加被点击button的name记录
+            }
         }
     }
 }
