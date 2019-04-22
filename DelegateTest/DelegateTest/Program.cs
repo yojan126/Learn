@@ -13,7 +13,9 @@ namespace DelegateTest
             // Test1.DoThis();
             // Test2.DoThis();
 
-            AnonymousMethod.DoThis();
+            // AnonymousMethod.DoThis();
+
+            ConcurrentQueue.DoThis();
         }
     }
 }

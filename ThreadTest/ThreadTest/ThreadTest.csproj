@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DF166224-091B-4422-B7B1-FF4B8547F970}</ProjectGuid>
+    <ProjectGuid>{A894DD6E-14C0-4093-931A-5E6530023484}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DelegateTest</RootNamespace>
-    <AssemblyName>DelegateTest</AssemblyName>
+    <RootNamespace>ThreadTest</RootNamespace>
+    <AssemblyName>ThreadTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnonymousMethod.cs" />
-    <Compile Include="ConcurrentQueue.cs" />
+    <Compile Include="AbortThreadTest.cs" />
+    <Compile Include="BackgroundThread.cs" />
+    <Compile Include="InterruptThreadTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test1.cs" />
-    <Compile Include="Test2.cs" />
+    <Compile Include="ThreadPoolTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
