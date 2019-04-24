@@ -17,7 +17,7 @@ namespace AsyncTest
         public DataTable dtShow = new DataTable();
         Thread t1;
         Thread t2;
-        private static object lockobj = new object();
+        private static readonly object lockobj = new object();
         public Form4()
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace AsyncTest
 
         public void dgvRefresh()
         {
-            while (1 == 1)
+            while (true)
             {
                 Thread.Sleep(200);
                 ShowData();

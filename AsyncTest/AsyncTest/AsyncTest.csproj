@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventHandlerTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventHandlerTest.Designer.cs">
+      <DependentUpon>EventHandlerTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FocusLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EventHandlerTest.resx">
+      <DependentUpon>EventHandlerTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

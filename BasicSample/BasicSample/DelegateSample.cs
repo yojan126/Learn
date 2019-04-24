@@ -15,9 +15,11 @@ namespace BasicSample
         public static void Do()
         {
             A a = new A();
+            B b = new B(a);
+            C c = new C(a);
             Random random = new Random(3);
             int i;
-            while (1 == 1)
+            while (true)
             {
                 i = random.Next(1, 4);
                 switch (i)

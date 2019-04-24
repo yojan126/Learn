@@ -20,6 +20,8 @@ namespace BasicSample
         public override string Result(string str)
         {
             //return ASCIIEncoding.GetEncoding()
+
+            return str;
         }
     }
 }

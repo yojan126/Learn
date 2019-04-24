@@ -10,12 +10,12 @@ namespace DelegateTest
     {
         static void Main(string[] args)
         {
-            // Test1.DoThis();
+            Test1.DoThis();
             // Test2.DoThis();
 
             // AnonymousMethod.DoThis();
 
-            ConcurrentQueue.DoThis();
+            // ConcurrentQueue.DoThis();
         }
     }
 }

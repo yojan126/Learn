@@ -19,6 +19,7 @@ namespace DelegateTest
             test.delegateMethod = new TestDelegate.DelegateMethod(test.NonStaticMethod);
             test.delegateMethod += new TestDelegate.DelegateMethod(TestDelegate.StaticMethod);
             test.delegateMethod += OtherClassMethod;
+            test.delegateMethod += new TestDelegate.DelegateMethod(OtherClassMethod);
             test.RunDelegateMethod();
 
             Console.ReadLine();

@@ -11,13 +11,13 @@ namespace BasicSample
         static void Main(string[] args)
         {
             // 委托例子
-            // DelegateSample.Do();
+            DelegateSample.Do();
 
             // 检测奇偶
             // CheckOddSample.CheckOdd();
 
             // 通过线程延时排序
-            ThreadSort.ThreadSortMethod();
+            // ThreadSort.ThreadSortMethod();
         }
     }
 }
