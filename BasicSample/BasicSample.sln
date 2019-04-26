@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormProgressBar", "WinFo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverAndDelegateAndEvent", "ObserverAndDelegateAndEvent\ObserverAndDelegateAndEvent.csproj", "{1030801F-639A-4EEB-8083-0E76E08E6324}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropDownTextTest", "DropDownTextTest\DropDownTextTest.csproj", "{B6A87942-5B39-415E-8B43-70B48DF44252}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1030801F-639A-4EEB-8083-0E76E08E6324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1030801F-639A-4EEB-8083-0E76E08E6324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1030801F-639A-4EEB-8083-0E76E08E6324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A87942-5B39-415E-8B43-70B48DF44252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A87942-5B39-415E-8B43-70B48DF44252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A87942-5B39-415E-8B43-70B48DF44252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A87942-5B39-415E-8B43-70B48DF44252}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

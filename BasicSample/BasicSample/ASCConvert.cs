@@ -15,13 +15,22 @@ namespace BasicSample
         public abstract string Result(string str);
     }
 
-    public class charToASIC: ConvertASC
+    public class charToASIC : ConvertASC
     {
         public override string Result(string str)
         {
             //return ASCIIEncoding.GetEncoding()
 
+
+            var (_, a, _) = test1();
+
             return str;
+
+        }
+
+        public static (string, int, double) test1()
+        {
+            return ("a", 1, 0);
         }
     }
 }
