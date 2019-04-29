@@ -18,7 +18,7 @@ namespace DropDownTextTest
         {
             InitializeComponent();
         }
-        bool dataFlag = true;
+
         private void comboBox1_TextUpdate(object sender, EventArgs e)
         {
             string input = comboBox1.Text.ToString();
@@ -27,35 +27,42 @@ namespace DropDownTextTest
         }
 
         private List<string> lstDataCache = new List<string>();
+        private readonly object locker = new object();
 
         private void GetData(object inputText)
         {
             List<string> lst = new List<string>();
-            if (lstDataCache != null && lstDataCache.Count > 0)
+            lock (locker)
             {
-                lst = lstDataCache.Where(t => t[0].ToString().IndexOf(inputText.ToString()) > -1).ToList();
-            }
-            else
-            {
-                DataTable dt = DBHelper.GetTable("select value from data where value like '" + inputText + "%'");
-                foreach (DataRow dr in dt.Rows)
+                if (lstDataCache != null && lstDataCache.Count > 0)
                 {
-                    lstDataCache.Add(dr[0].ToString());
+                    lst = lstDataCache.Where(t => t.StartsWith(inputText.ToString())).ToList();
                 }
-                GetData(inputText);
-            }
-            if (lst == null || lst.Count == 0)
-            {
-                DataTable dt = DBHelper.GetTable("select value from data where value like '" + inputText + "%'");
-                foreach (DataRow dr in dt.Rows)
+                else
                 {
-                    lstDataCache.Add(dr[0].ToString());
+                    DataTable dt = DBHelper.GetTable("select value from data where value like '" + inputText + "%'");
+                    lstDataCache.Clear();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        lstDataCache.Add(dr[0].ToString());
+                    }
+                    lst = lstDataCache.Where(t => t.StartsWith(inputText.ToString())).ToList();
                 }
-                lst = lstDataCache.Where(t => t[0].ToString().IndexOf(inputText.ToString()) > -1).ToList();
-            }
+                if (lst == null || lst.Count == 0)
+                {
+                    DataTable dt = DBHelper.GetTable("select value from data where value like '" + inputText + "%'");
+                    lstDataCache.Clear();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        lstDataCache.Add(dr[0].ToString());
+                    }
+                    lst = lstDataCache.Where(t => t.StartsWith(inputText.ToString())).ToList();
+                }
 
-            SetData(lst);
+                SetData(lst);
+            }
         }
+
         delegate void SetDataEventHandler(List<string> lstData);
 
         private void SetData(List<string> lstData)
@@ -66,23 +73,25 @@ namespace DropDownTextTest
             }
             else
             {
-                if (lstData == null || lstData.Count == 0)
+                if (comboBox1.Text.ToString().Length > 0)
                 {
-
+                    if (lstData.Count > 0 && comboBox1.Text.ToString() != lstData[0])
+                    {
+                        lstData.Insert(0, comboBox1.Text.ToString());
+                    }
+                    comboBox1.Items.Clear();
+                    comboBox1.Items.AddRange(lstData.ToArray());
+                    // comboBox1.SelectedIndex = 0;
+                    // 设置光标位置，否则光标位置始终保持在第一列，造成输入关键词的倒序排列
+                    comboBox1.SelectionStart = this.comboBox1.Text.Length;
+                    // 保持鼠标指针原来状态，有时候鼠标指针会被下拉框覆盖，所以要进行一次设置
+                    Cursor = Cursors.Default;
+                    // 自动弹出下拉框
+                    comboBox1.DroppedDown = true;
                 }
                 else
                 {
-                    string tmp = comboBox1.Text;
-                    comboBox1.ValueMember = "value";
-                    DataRow dr = dt.NewRow();
-                    dr[0] = tmp;
-                    dt.Rows.InsertAt(dr, 0);
-                    comboBox1.DataSource = dt;
-                    comboBox1.SelectedIndex = 0;
-                    comboBox1.SelectionStart = this.comboBox1.Text.Length;
-                    Cursor = Cursors.Default;
-                    comboBox1.DroppedDown = true;
-                    //comboBox1.SelectedIndex = -1;
+                    comboBox1.Items.Clear();
                 }
             }
         }
