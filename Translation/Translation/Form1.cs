@@ -20,26 +20,17 @@ namespace Translation
         ExcelEdit ee = new ExcelEdit();
         Dictionary<string, string> dicAllWords = new Dictionary<string, string>();
         Thread t;
+        Task task;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Dictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("apple", "");
-            dic.Add("big", "");
-            dic.Add("cat", "");
-
-            com.GetMes(ref dic);
-        }
-
         private void btn_OpenExcel_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = "E:\\ProgramData\\Document\\WeChat Files\\fzh_126\\Files";//注意这里写路径时要用c:\\而不是c:\
+            //openFileDialog.InitialDirectory = "E:\\ProgramData\\Document\\WeChat Files\\fzh_126\\Files";//注意这里写路径时要用c:\\而不是c:\
             openFileDialog.Filter = "Excel(xls,xlsx)|*.xlsx;*.xls";
             openFileDialog.RestoreDirectory = true;
             openFileDialog.FilterIndex = 1;
@@ -52,16 +43,24 @@ namespace Translation
             }
         }
 
-        private async void btn_Trans_Click(object sender, EventArgs e)
+        private void btn_Trans_Click(object sender, EventArgs e)
         {
-            btn_OpenExcel.Enabled = false;
-            btn_Trans.Enabled = false;
-
-            t = new Thread(DoEvent);
-            t.Start();
+            try
+            {
+                btn_OpenExcel.Enabled = false;
+                btn_Trans.Enabled = false;
+                task = new Task(DoTranslate);
+                task.Start();
+                //t = new Thread(DoTranslate);
+                //t.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "error");
+            }
         }
 
-        private void DoEvent()
+        private void DoTranslate()
         {
             UpdateProgress(10);
             Dictionary<string, string> dicWaitTrans = new Dictionary<string, string>();
@@ -70,7 +69,7 @@ namespace Translation
             do
             {
                 dicWaitTrans = ee.GetExcelWords(ref bolFlag, dicAllWords);
-                Thread.Sleep(1000);
+                // Thread.Sleep(1000);
                 UpdateProgress(30);
                 if (com.GetMes(ref dicWaitTrans))
                 {
@@ -83,7 +82,7 @@ namespace Translation
                     }
                 }
             } while (bolFlag);
-            Thread.Sleep(1000);
+            // Thread.Sleep(1000);
             UpdateProgress(70);
 
             if (dicAllWords != null && dicAllWords.Count > 0 && dicAllWords.Keys.ToArray()[0] != "ERROR")
@@ -115,7 +114,8 @@ namespace Translation
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            t.Abort();
+            task.Dispose();
+            //t.Abort();
         }
     }
 }

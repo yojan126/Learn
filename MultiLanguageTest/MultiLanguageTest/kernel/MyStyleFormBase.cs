@@ -24,8 +24,11 @@ namespace MultiLanguageTest.kernel
 
         private void MyStyleFormBase_Shown(object sender, EventArgs e)
         {
-            LanguageHelper.SetControlLanguageText(this);
-            base.ControlAdded += MyStyleFormBase_ControlAdded;
+            if (!DesignMode)
+            {
+                LanguageHelper.SetControlLanguageText(this);
+                base.ControlAdded += MyStyleFormBase_ControlAdded;
+            }
         }
 
         private void MyStyleFormBase_ControlAdded(object sender, ControlEventArgs e)

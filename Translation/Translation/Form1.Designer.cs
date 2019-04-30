@@ -43,9 +43,9 @@
             // 
             this.btn_OpenExcel.Location = new System.Drawing.Point(322, 27);
             this.btn_OpenExcel.Name = "btn_OpenExcel";
-            this.btn_OpenExcel.Size = new System.Drawing.Size(75, 23);
+            this.btn_OpenExcel.Size = new System.Drawing.Size(88, 23);
             this.btn_OpenExcel.TabIndex = 1;
-            this.btn_OpenExcel.Text = "选择文件";
+            this.btn_OpenExcel.Text = "Select Excel";
             this.btn_OpenExcel.UseVisualStyleBackColor = true;
             this.btn_OpenExcel.Click += new System.EventHandler(this.btn_OpenExcel_Click);
             // 
@@ -60,9 +60,9 @@
             // 
             this.btn_Trans.Location = new System.Drawing.Point(322, 56);
             this.btn_Trans.Name = "btn_Trans";
-            this.btn_Trans.Size = new System.Drawing.Size(75, 23);
+            this.btn_Trans.Size = new System.Drawing.Size(88, 23);
             this.btn_Trans.TabIndex = 3;
-            this.btn_Trans.Text = "翻译";
+            this.btn_Trans.Text = "Translate";
             this.btn_Trans.UseVisualStyleBackColor = true;
             this.btn_Trans.Click += new System.EventHandler(this.btn_Trans_Click);
             // 
@@ -85,7 +85,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Excel文档翻译1.0";
+            this.Text = "Excel Translation Tool ver 1.1 by JohnFeng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
