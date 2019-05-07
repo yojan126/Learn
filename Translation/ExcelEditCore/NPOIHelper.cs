@@ -949,7 +949,7 @@ public class NPOIHelper
         foreach (DataTable dt in lstWorkBook)
         {
             ISheet Tmpsheet = hssfworkbook.GetSheet(dt.TableName);
-
+            
             for (int r = 0; r < dt.Rows.Count; r++)
             {
                 try
@@ -980,7 +980,9 @@ public class NPOIHelper
                         }
                         if (strCell.Trim().CompareTo(strAdd.Trim()) != 0)
                         {
-                            strCell = strCell + "," + strAdd;
+                            strCell = strCell + "\r\n" + strAdd;                        
+                            // 自动换行
+                            Tmpsheet.GetRow(r).GetCell(c).CellStyle.WrapText = true;
                         }
                         Tmpsheet.GetRow(r).GetCell(c).SetCellType(CellType.String);
                         Tmpsheet.GetRow(r).GetCell(c).SetCellValue(strCell);
