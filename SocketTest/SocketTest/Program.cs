@@ -32,9 +32,7 @@ namespace SocketTest
         {
             Console.WriteLine(string.Format("客户端{0}上线，上线时间：\t{1}", clientInfo.ClientID, clientInfo.LastHeartbeatTime));
         }
-
-
-
+        
         static void Main(string[] args)
         {
             // 服务端
