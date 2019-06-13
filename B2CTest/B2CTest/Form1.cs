@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,7 +25,6 @@ namespace B2CTest
         public Form1()
         {
             InitializeComponent();
-
         }
 
 
@@ -39,6 +39,8 @@ namespace B2CTest
             //httpItem.Cookie = "lastvisit = 1557365341; guestJs = 1557365340; UM_distinctid = 16a9a3540f0ac - 0d04f0131d3681 - 387e144f - 1fa400 - 16a9a3540f1cf3; CNZZDATA30043604 = cnzz_eid % 3D1904332819 - 1557360684 -% 26ntime % 3D1557360684; CNZZDATA30039253 = cnzz_eid % 3D928857818 - 1557361574 -% 26ntime % 3D1557361574; lastpath =/ thread.php ? fid = -7 & rand = 807; bbsmisccookies =% 7B % 22uisetting % 22 % 3A % 7B0 % 3A % 22a % 22 % 2C1 % 3A1557365644 % 7D % 7D; CNZZDATA1256638820 = 2004249330 - 1557362947 - http % 253A % 252F % 252Fbbs.nga.cn % 252F % 7C1557362947; ngaPassportUid = guest05cd3825c55516; taihe = 97269b18af08d5fd64e0275479a4c1ce; taihe_session = 76f606c15009834de6197d67d22b2fda; Hm_lvt_5adc78329e14807f050ce131992ae69b = 1557365346; Hm_lpvt_5adc78329e14807f050ce131992ae69b = 1557365346";
             //HttpResult httpResult =  httpHelper.GetHtml(httpItem);
             string url = ((ComboxItem)comboBox1.SelectedItem).Value;
+            UpdateProcessBar(1);
+
             t = new Thread(HtmlRefresh);
             t.Start(url);
         }
@@ -116,7 +118,7 @@ namespace B2CTest
                 }
                 foreach (var element in parsedDocument["html"]["body"]["div", 1]["div"]["div", 4]["div"]["div", 1])
                 {
-                    if (element.Properties["title"].ToString() == "下一页")
+                    if (element.Properties.ContainsKey("title") && element.Properties["title"].ToString() == "下一页")
                     {
                         drurl = drurl + element.Properties["href"].Substring(element.Properties["href"].IndexOf("id=") - 1);
                         dr[1] = drurl;
@@ -155,13 +157,14 @@ namespace B2CTest
                 dataGridView1.DataSource = dtShow;
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 30, 30);
                 dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 30, 30);
-
                 UpdateProcessBar(100);
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Win32.AnimateWindow(this.Handle, 1000, Win32.AW_BLEND);
+
             dtCache.Columns.Add("Value");
             dtCache.Columns.Add("Url");
 
@@ -181,6 +184,9 @@ namespace B2CTest
 
             webBrowser1.ScriptErrorsSuppressed = true;
             webBrowser1.AllowNavigation = true;
+
+
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -192,9 +198,14 @@ namespace B2CTest
                     tmpRowIndex = e.RowIndex;
                     dtCache = dtShow.Copy();
                 }
+                UpdateProcessBar(1);
 
                 t = new Thread(HtmlRefresh);
                 t.Start(dtShow.Rows[e.RowIndex]["Url"].ToString());
+            }
+            else
+            {
+                MessageBox.Show(dtShow.Rows[e.RowIndex]["Value"].ToString());
             }
         }
 
@@ -205,9 +216,17 @@ namespace B2CTest
             {
                 UpdateProcessBar(index);
                 Thread.Sleep(100);
+
+                if (index >= 100)
+                {
+                    break;
+                }
                 index++;
             }
-            webBrowser1.Navigate(url.ToString());
+            if (index < 100)
+            {
+                webBrowser1.Navigate(url.ToString());
+            }
         }
 
         delegate bool WebBIsBusyEventHandler();
@@ -262,7 +281,63 @@ namespace B2CTest
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            t.Abort();
+            if (t != null)
+            {
+                t.Abort();
+            }
+            Win32.AnimateWindow(this.Handle, 1000, Win32.AW_SLIDE | Win32.AW_HIDE | Win32.AW_BLEND);
+        }
+
+        private Point mousePoint = new Point();
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            this.mousePoint.X = e.X;
+            this.mousePoint.Y = e.Y;
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Top = Control.MousePosition.Y - mousePoint.Y;
+                this.Left = Control.MousePosition.X - mousePoint.X;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
         }
     }
+
+    public class Win32
+    {
+        public const Int32 AW_HOR_POSITIVE = 0x00000001;    // 从左到右打开窗口
+        public const Int32 AW_HOR_NEGATIVE = 0x00000002;    // 从右到左打开窗口
+        public const Int32 AW_VER_POSITIVE = 0x00000004;    // 从上到下打开窗口
+        public const Int32 AW_VER_NEGATIVE = 0x00000008;    // 从下到上打开窗口
+        public const Int32 AW_CENTER = 0x00000010;
+        public const Int32 AW_HIDE = 0x00010000;        // 在窗体卸载时若想使用本函数就得加上此常量
+        public const Int32 AW_ACTIVATE = 0x00020000;    //在窗体通过本函数打开后，默认情况下会失去焦点，除非加上本常量
+        public const Int32 AW_SLIDE = 0x00040000;
+        public const Int32 AW_BLEND = 0x00080000;       // 淡入淡出效果
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern bool AnimateWindow(
+        IntPtr hwnd, // handle to window  
+        int dwTime, // duration of animation  
+        int dwFlags // animation type  
+        );
+    }
+
 }
