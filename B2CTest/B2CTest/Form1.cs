@@ -96,8 +96,15 @@ namespace B2CTest
                         }
                         catch (Exception)
                         {
-                            dr[0] = element["tr"]["td", 1]["span"]["span"].Son;
-                            // Console.WriteLine(element["tr"]["td", 1]["span"]["span"].Son);
+                            try
+                            {
+                                dr[0] = element["tr"]["td", 1]["span"]["span"].Son;
+                                // Console.WriteLine(element["tr"]["td", 1]["span"]["span"].Son);
+                            }
+                            catch (Exception)
+                            {
+                                continue;
+                            }
                         }
                         dtShow.Rows.Add(dr);
                     }
@@ -163,7 +170,7 @@ namespace B2CTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Win32.AnimateWindow(this.Handle, 1000, Win32.AW_BLEND);
+            Win32.AnimateWindow(this.Handle, 200, Win32.AW_BLEND);
 
             dtCache.Columns.Add("Value");
             dtCache.Columns.Add("Url");
@@ -172,8 +179,10 @@ namespace B2CTest
             dtShow.Columns.Add("Url");
 
             ComboxItem[] items = {
-                new ComboxItem("DYW", "http://bbs.nga.cn/thread.php?fid=-7&rand=330"),
-                new ComboxItem("LD", "http://bbs.nga.cn/thread.php?fid=623&rand=788")
+                new ComboxItem("DYW", "http://bbs.nga.cn/thread.php?fid=-7"),
+                new ComboxItem("LD", "http://bbs.nga.cn/thread.php?fid=623"),
+                new ComboxItem("DTBY", "http://bbs.nga.cn/thread.php?fid=659"),
+                new ComboxItem("DDZZQ", "http://bbs.nga.cn/thread.php?fid=641")
             };
 
             comboBox1.Items.AddRange(items);
@@ -285,7 +294,7 @@ namespace B2CTest
             {
                 t.Abort();
             }
-            Win32.AnimateWindow(this.Handle, 1000, Win32.AW_SLIDE | Win32.AW_HIDE | Win32.AW_BLEND);
+            Win32.AnimateWindow(this.Handle, 200, Win32.AW_SLIDE | Win32.AW_HIDE | Win32.AW_BLEND);
         }
 
         private Point mousePoint = new Point();
